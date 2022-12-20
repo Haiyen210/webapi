@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Them moi</h1>
+                <form action="" method="post" id="form-add">
+                    <div class="form-group">
+                        <label for="">Ten nhan vien :</label>
+                        <input type="text" placeholder="Ten nhan vien" id="name">
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" value="false" name="gender" id="gender" checked>Nam
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" value="true" name="gender" id="gender">Nu
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ngay sinh :</label>
+                        <input type="date" id="birthday" placeholder="Ngay sinh">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Dia chi :</label>
+                        <input type="text" id="address" placeholder="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Chuc vu :</label>
+                        <input type="text" id="position" placeholder="position">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Phong ban :</label>
+                        <select name="departId" id="department"> 
+                           
+                       </select>
+                    </div>
+                    <button type="button" class="btn btn-primary add-new">Luu</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h1>Phong ban</h1>
+                <table class="table table-bordered table-hover" id="table-list">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên nhan vien</th>
+                            <th>Gioi tinh</th>
+                            <th>Ngay sinh</th>
+                            <th>Dia chi</th>
+                            <th>Chuc vu</th>
+                            <th>Phong ban</th>
+                            <th>Lựa chọn</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list">
+                        <!-- Dữ liệu load vào đây -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Thêm Modal chỉnh sửa-->
+        <div class="modal fade" id="modal-edit">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Chỉnh sửa thông tin</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="POST" class="form-inline" id="form-add">
+                            <input type="hidden" id="edit_id" class="form-control">
+                            <div class="form-group">
+                                <label for="">Ten nhan vien :</label>
+                                <input type="text" placeholder="Ten nhan vien" id="edit_name">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" value="false" name="_editgender" id="edit_gender" >Nam
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" value="true" name="_editgender" id="edit_gender" checked>Nu
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Ngay sinh :</label>
+                                <input type="text" id="edit_birthday" placeholder="Ngay sinh">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Dia chi :</label>
+                                <input type="text" id="edit_address" placeholder="edit_address">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Chuc vu :</label>
+                                <input type="text" id="edit_position" placeholder="edit_position">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Phong ban :</label>
+                                <select name="departId" id="departments"> 
+                                   
+                               </select>
+                            </div>
+                            <button type="button" class="btn btn-primary update">Cập nhật</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- detail -->
+        <div class="modal fade" id="modal-id">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria hidden="true">&times;</button>
+                        <h4 class="modal-title">Thông tin chi tiết</h4>
+                    </div>
+                    <div class="modal-body" id="detail">
+                        <!-- nội dung load từ ajax sẽ đổ vào đây -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../employee.js"></script>
+</body>
+
+</html>

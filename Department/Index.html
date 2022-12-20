@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Them moi</h1>
+                <form action="" method="post" id="form-add">
+                    <div class="group">
+                        <label for="">Ten phong ban :</label>
+                        <input type="text" placeholder="Ten phong ban" id="name">
+                    </div>
+                    <div class="group">
+                        <label for="">so luong nhan vien :</label>
+                        <input type="text" placeholder="so luong nhan vien" id="totalEmployee">
+                    </div>
+                    <button type="button" class="btn btn-primary add-new">Luu</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h1>Phong ban</h1>
+                <table class="table table-bordered table-hover" id="table-list">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên phong ban</th>
+                            <th>Tong so nhan vien</th>
+                            <th>Lựa chọn</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list">
+                        <!-- Dữ liệu load vào đây -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Thêm Modal chỉnh sửa-->
+        <div class="modal fade" id="modal-edit">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Chỉnh sửa thông tin</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="POST" class="form-inline" id="form-add">
+                            <input type="hidden" id="edit_id" class="form-control">
+                            <div class="form-group">
+                                <label>Tên phong ban</label>
+                                <input class="form-control" id="edit_name">
+                            </div>
+                            <div class="form-group">
+                                <label>so luong nhan vien</label>
+                                <input type="number" class="form-control" id="edit_totalEmployee">
+                            </div>
+                            <button type="button" class="btn btn-primary update">Cập nhật</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-id">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria hidden="true">&times;</button>
+                        <h4 class="modal-title">Thông tin chi tiết</h4>
+                    </div>
+                    <div class="modal-body" id="detail">
+                        <!-- nội dung load từ ajax sẽ đổ vào đây -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../demo.js"></script>
+</body>
+
+</html>
